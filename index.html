@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oblivian OS — CineOS Experience</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/om.css">
+    <link rel="stylesheet" href="css/songs.css">
+</head>
+<body>
+    <!-- Boot Screen -->
+    <div id="boot-screen">
+        <div class="boot-logo glitch-text">OBLIVIAN</div>
+        <div class="boot-sub">CineOS Experience</div>
+        <div class="boot-loading"><div class="boot-loading-bar" id="bootLoadingBar"></div></div>
+        <div class="boot-choice" id="bootChoice">
+            <button class="boot-choice-btn linux" id="btnLinux">
+                <span class="icon">🐧</span><span>Linux</span>
+            </button>
+            <button class="boot-choice-btn os" id="btnOS">
+                <span class="icon">💻</span><span>OS</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Desktop -->
+    <div id="desktop">
+        <div id="menu-bar">
+            <div class="menu-bar-left">
+                <span class="menu-logo">◆ Oblivian</span>
+                <span>File</span><span>Edit</span><span>View</span><span>Go</span><span>Window</span><span>Help</span>
+            </div>
+            <div class="menu-bar-right">
+                <span>📶</span><span>🔋 100%</span><span id="menuBarTime2"></span>
+            </div>
+        </div>
+
+        <div class="desktop-icons" id="desktopIcons">
+            <div class="desktop-icon" onclick="openApp('messages')"><span class="icon">💬</span><span>Messages</span></div>
+            <div class="desktop-icon" onclick="openApp('games')"><span class="icon">🎮</span><span>Games</span></div>
+            <div class="desktop-icon" onclick="openApp('proxy')"><span class="icon">🌐</span><span>Proxy</span></div>
+            <div class="desktop-icon" onclick="openApp('settings')"><span class="icon">⚙️</span><span>Settings</span></div>
+            <div class="desktop-icon" onclick="openApp('terminal')"><span class="icon">⌨️</span><span>Terminal</span></div>
+            <div class="desktop-icon" onclick="openApp('music')"><span class="icon">🎵</span><span>Music</span></div>
+            <div class="desktop-icon" onclick="openApp('om')"><span class="icon">🎬</span><span>OM</span></div>
+            <div class="desktop-icon" onclick="openApp('songs')"><span class="icon">🎧</span><span>Songs</span></div>
+        </div>
+
+        <div id="taskbar">
+            <button class="taskbar-start-btn" id="startBtn">◆</button>
+            <div class="taskbar-separator"></div>
+            <button class="taskbar-btn" onclick="openApp('messages')">💬</button>
+            <button class="taskbar-btn" onclick="openApp('games')">🎮</button>
+            <button class="taskbar-btn" onclick="openApp('proxy')">🌐</button>
+            <button class="taskbar-btn" onclick="openApp('settings')">⚙️</button>
+            <button class="taskbar-btn" onclick="openApp('terminal')">⌨️</button>
+            <button class="taskbar-btn" onclick="openApp('music')">🎵</button>
+            <button class="taskbar-btn" onclick="openApp('om')">🎬</button>
+            <button class="taskbar-btn" onclick="openApp('songs')">🎧</button>
+            <div class="taskbar-separator"></div>
+            <span class="taskbar-clock" id="taskbarClock"></span>
+        </div>
+
+        <div id="start-menu">
+            <div class="start-menu-grid">
+                <div class="start-menu-item" onclick="openApp('messages')">💬 Messages</div>
+                <div class="start-menu-item" onclick="openApp('games')">🎮 Games</div>
+                <div class="start-menu-item" onclick="openApp('proxy')">🌐 Proxy</div>
+                <div class="start-menu-item" onclick="openApp('settings')">⚙️ Settings</div>
+                <div class="start-menu-item" onclick="openApp('terminal')">⌨️ Terminal</div>
+                <div class="start-menu-item" onclick="openApp('music')">🎵 Music</div>
+                <div class="start-menu-item" onclick="openApp('om')">🎬 OM</div>
+                <div class="start-menu-item" onclick="openApp('songs')">🎧 Songs</div>
+            </div>
+        </div>
+
+        <div id="windowContainer"></div>
+    </div>
+
+    <div class="age-gate-overlay" id="ageGateOverlay">
+        <div class="age-gate-modal">
+            <h2>⚠️ 18+ Content Warning</h2>
+            <p>This section contains anime-style artistic content for adults only. All content is tastefully covered with black bars. By proceeding, you confirm you are 18 years or older.</p>
+            <div class="age-gate-btns">
+                <button class="age-gate-btn yes" onclick="acceptAgeGate()">I am 18+</button>
+                <button class="age-gate-btn no" onclick="declineAgeGate()">I'm under 18</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="notifications-container"></div>
+
+    <script src="js/data/games.js"></script>
+    <script src="js/data/movies.js"></script>
+    <script src="js/data/songs.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/apps/messages.js"></script>
+    <script src="js/apps/games.js"></script>
+    <script src="js/apps/proxy.js"></script>
+    <script src="js/apps/settings.js"></script>
+    <script src="js/apps/terminal.js"></script>
+    <script src="js/apps/om.js"></script>
+    <script src="js/apps/songs.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initOblivian();
+        });
+    </script>
+</body>
+</html>
